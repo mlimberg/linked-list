@@ -1,3 +1,51 @@
 body {
-  background-color: magenta;
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  background-color: #455A64;
+  color: #FFFFFF;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.h1-text-linked, .h1-text-list {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.logo {
+  height: 1.5em;
+  display: inline-block
+}
+
+input {
+    font-size: 1.6em;
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+
+input, button {
+  display: block;
+  margin: 10px auto;
+  width: 90%;
+  border: none;
+  padding: 5px;
+}
+
+button, button:hover {
+  background-color: #FFC107;
+  color: #FFFFFF;
+  border: none;
+  font-weight: 800;
+  height: 3em;
+  width: 93%;
+}
+
+button:hover {
+  background-color: #FFD773;
 }
