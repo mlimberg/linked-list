@@ -20,7 +20,7 @@ a {
   color: #607D8B;
 }
 
-a:hover, #marked:hover, #remove:hover {
+a:hover, .mark-as-read:hover, .remove:hover {
   color: #455A64;
   font-weight: 800;
   cursor: pointer;
@@ -97,9 +97,9 @@ section {
   padding: 10px;
 }
 
-.new-bookmark:hover {
+/*.new-bookmark:hover {
   background-color: white;
-}
+}*/
 
 .new-title {
   color: #455A64;
@@ -116,14 +116,18 @@ section {
   padding: 15px 0px;
 }
 
-#marked, #remove {
+.mark-as-read, .remove {
   border: none;
   background-color: white;
 }
 
 .read {
     background-color: #F2F4F4;
+}
 
+.red {
+  color: red;
+  background-color: inherit;
 }
 
 @media (min-width: 770px) {
