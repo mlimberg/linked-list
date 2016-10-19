@@ -30,14 +30,14 @@ $enter.on('click', function() {
 
 // ! Bookmark only works if user enters "http://"
 
-function newSection() {
+function newSection(title) {
 var currentBookmark = new Bookmark();
-var listItem = currentBookmark['title'];
+var listTitle = currentBookmark['title'];
 var listLink = currentBookmark['link'];
-var titles = ('<div class="new-bookmark">' + '<div class="new-title">' + listItem + '</div>' + '<div class="new-link">');
-var links = ('<a href="' + currentBookmark['link'] + '" target="_blank">'+ currentBookmark['link'] + '</a>'+ '</div>');
+var titles = ('<div class="new-bookmark">' + '<div class="new-title">' + listTitle + '</div>' + '<div class="new-link">');
+var links = ('<a href="' + listLink + '" target="_blank">'+ listLink + '</a>'+ '</div>');
 var buttons = ('<div class="button-block">' + '<button type="button" name="button" id="marked">Read</button><button type="button" name="button" id="remove">Delete</button>' + '</div>' + '</div>');
-if (currentBookmark['title'] === "" || currentBookmark['link'] === "") {
+if (listTitle === "" || listLink === "") {
   alert('You must enter a title and a URL!');
        }  else {
 $bookmarkSection.prepend(titles + links + buttons);
