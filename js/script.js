@@ -10,15 +10,6 @@ function Bookmark(title, link) {
   this.link = $link.val();
 }
 
-function addBookmark() {
-    var currentBookmark = new Bookmark();
-    if (currentBookmark['title'] === "" || currentBookmark['link'] === "") {
-      alert('You must enter a title and a URL!');
-  } else {
-    $bookmarkTitle.append(currentBookmark['title']);
-    $bookmarkLink.append('<a href="' + currentBookmark['link'] + '" target="_blank">'+ currentBookmark['link'] + '</a>');
-  }
-}
 
 function toggleBookmark() {
   $bookmarkSection.addClass('new-bookmark');
@@ -31,9 +22,16 @@ function clearFields() {
 $enter.on('click', function() {
       newSection();
       toggleBookmark();
-      // addBookmark();
       clearFields();
   });
+
+  $('input').keypress(function(event) {
+     if (event.which === 13) {
+       toggleBookmark();
+       newSection();
+       clearFields();
+     }
+   });
 
 // ! Bookmark only works if user enters "http://"
 
@@ -41,6 +39,9 @@ function newSection() {
 var currentBookmark = new Bookmark();
 var listItem = currentBookmark['title'];
 var listLink = currentBookmark['link'];
-$bookmarkSection.prepend('<a href="' + currentBookmark['link'] + '" target="_blank">'+ currentBookmark['link'] + '</a>'+ '</div>');
-$bookmarkSection.prepend('<div class="new-bookmark">' + listItem);
-}
+if (currentBookmark['title'] === "" || currentBookmark['link'] === "") {
+  alert('You must enter a title and a URL!');
+       }  else {
+$bookmarkSection.prepend('<div class="new-bookmark">' + '<div class="new-title">' + listItem + '</div>' + '<div class="new-link">' + '<a href="' + currentBookmark['link'] + '" target="_blank">'+ currentBookmark['link'] + '</a>'+ '</div>' + '</div>');
+       }
+   }
