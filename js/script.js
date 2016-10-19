@@ -3,11 +3,11 @@ var $link = $('.website-link-input');
 var $enter = $('.enter');
 var $bookmarkTitle = $('.bookmark-title');
 var $bookmarkLink = $('.bookmark-link');
-
+var currentBookmark =
 
 function Bookmark(title, link) {
-  this.title = title;
-  this.link = link;
+  this.title = $title.val();
+  this.link = $link.val();
 }
 
 
@@ -15,6 +15,14 @@ function Bookmark(title, link) {
 
 
 $('.enter').on('click', function() {
-      $bookmarkTitle.text($title.val());
-      $bookmarkLink.text($link.val());
+      $bookmarkTitle.append(new Bookmark);
+      $bookmarkLink.append($link.val());
   });
+
+
+
+ $.enter.addEventListener('click', function() {
+        console.log('crackatoa')
+ });
+
+ )
