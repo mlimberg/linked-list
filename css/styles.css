@@ -67,6 +67,12 @@ input {
   background-color: #CFD8DC;
 }
 
+.new-bookmark {
+  display: block;
+  background-color: pink;
+  width: 100%;
+}
+
 @media (min-width: 500px) {
 
 header {
@@ -103,5 +109,8 @@ input, button, h1 {
 
 .bookmark-section {
   height: 1500px;
+  position: absolute;
+  right: 0;
+  width: 50%;
 }
 };
