@@ -4,6 +4,7 @@ var $enter = $('.enter');
 var $bookmarkTitle = $('.bookmark-title');
 var $bookmarkLink = $('.bookmark-link');
 var $bookmarkSection = $('.bookmark-section');
+var bookmarkCounter = 0;
 
 
 
@@ -42,10 +43,18 @@ if (listTitle === "" || listLink === "") {
   alert('You must enter a title and a URL!');
        }  else {
 $bookmarkSection.prepend(titles + links + buttons);
+bookmarkCounter += 1;
+console.log(bookmarkCounter);
        }
    };
 
 $('.bookmark-section').off('click').on('click', '.mark-as-read', function() {
   $(this).parent().parent().toggleClass('read');
   $(this).toggleClass('red');
+})
+
+$('.bookmark-section').on('click', '.remove', function() {
+  $(this).parent().parent().remove();
+  bookmarkCounter -= 1;
+  console.log(bookmarkCounter);
 })
