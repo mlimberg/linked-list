@@ -14,6 +14,18 @@ h1 {
   margin: 10px auto;
 }
 
+a {
+  text-decoration: none;
+  border-bottom: 1px solid #CFD8DC;
+  color: #607D8B;
+}
+
+a:hover, .mark-as-read:hover, .remove:hover {
+  color: #455A64;
+  font-weight: 800;
+  cursor: pointer;
+}
+
 .h1-text-linked, .h1-text-list {
   display: inline-block;
   font-size: 30px;
@@ -85,9 +97,9 @@ section {
   padding: 10px;
 }
 
-.new-bookmark:hover {
+/*.new-bookmark:hover {
   background-color: white;
-}
+}*/
 
 .new-title {
   color: #455A64;
@@ -104,14 +116,25 @@ section {
   padding: 15px 0px;
 }
 
-#marked, #remove {
+.mark-as-read, .remove {
   border: none;
-  background-color: white;
+  background-color: inherit;
 }
 
+.remove {
+  float: right;
+}
 
+.read {
+    background-color: #F2F4F4;
 
+}
 
+.red {
+  color: red;
+  font-weight: 800;
+  background-color: inherit;
+}
 
 @media (min-width: 770px) {
 
@@ -144,7 +167,6 @@ input, .enter, h1 {
   width: 60px;
   display: inline-block;
   vertical-align: bottom;
-
 }
 
 
