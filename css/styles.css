@@ -10,28 +10,34 @@ header {
 
 h1 {
   text-align: center;
+  margin: 10px auto;
+
 }
 
 .h1-text-linked, .h1-text-list {
   display: inline-block;
   font-size: 30px;
   font-weight: 800;
+  letter-spacing: 1px;
 }
 
 .logo {
-  height: 1.5em;
-  display: inline-block
+  height: 35px;
+  width: 40px;
+  display: inline-block;
+  vertical-align: top;
 }
 
 input {
-    font-size: 1.6em;
-    font-weight: lighter;
+    font-size: 1.4em;
+    font-weight: 200;
     letter-spacing: 2px;
+
 }
 
 input, button {
   display: block;
-  margin: 10px auto;
+  margin: 20px auto;
   width: 90%;
   border: none;
   padding: 5px;
@@ -42,10 +48,60 @@ button, button:hover {
   color: #FFFFFF;
   border: none;
   font-weight: 800;
-  height: 3em;
+  height: 2.3em;
   width: 93%;
+  font-size: 18px;
+  letter-spacing: 1px;
+
 }
 
 button:hover {
   background-color: #FFD773;
 }
+
+input {
+  border: 1px solid #D3D3D3;
+}
+
+.bookmark-section {
+  background-color: #CFD8DC;
+}
+
+@media (min-width: 500px) {
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.header-full {
+  margin: 50% auto;
+}
+
+.h1-text-linked, .h1-text-list {
+  display: inline-block;
+  font-size: 45px;
+  letter-spacing: 1px;
+}
+
+input, button, h1 {
+  margin: 50px auto;
+}
+
+
+.logo {
+  height: 45px;
+  width: 60px;
+  display: inline-block;
+  vertical-align: bottom;
+
+}
+
+
+.bookmark-section {
+  height: 1500px;
+}
+};
