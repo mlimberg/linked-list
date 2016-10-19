@@ -47,6 +47,5 @@ $bookmarkSection.prepend(titles + links + buttons);
 
 $('.bookmark-section').off('click').on('click', '.mark-as-read', function() {
   $(this).parent().parent().toggleClass('read');
-  $('.mark-as-read').toggleClass('red')
-  $('.remove').toggleClass('read')
+  $(this).toggleClass('red');
 })

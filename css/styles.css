@@ -118,15 +118,21 @@ section {
 
 .mark-as-read, .remove {
   border: none;
-  background-color: white;
+  background-color: inherit;
+}
+
+.remove {
+  float: right;
 }
 
 .read {
     background-color: #F2F4F4;
+
 }
 
 .red {
   color: red;
+  font-weight: 800;
   background-color: inherit;
 }
 
