@@ -3,26 +3,29 @@ var $link = $('.website-link-input');
 var $enter = $('.enter');
 var $bookmarkTitle = $('.bookmark-title');
 var $bookmarkLink = $('.bookmark-link');
-var currentBookmark =
 
 function Bookmark(title, link) {
   this.title = $title.val();
   this.link = $link.val();
 }
 
+function addBookmark() {
+    var currentBookmark = new Bookmark();
+    checkBookmark();
+    $bookmarkTitle.append("Title: " + currentBookmark['title']);
+    $bookmarkLink.append("URL: " + '<a href="' + currentBookmark['link'] + '" target="_blank">Some Text</a>');
+}
 
+function checkBookmark() {
+  if (4 === 5) {
+    return true;
+  } else {
+    alert('You must enter a title and a URL!');
+  }
+}
 
-
-
-$('.enter').on('click', function() {
-      $bookmarkTitle.append(new Bookmark);
-      $bookmarkLink.append($link.val());
+$enter.on('click', function() {
+      addBookmark();
   });
 
-
-
- $.enter.addEventListener('click', function() {
-        console.log('crackatoa')
- });
-
- )
+// ! Bookmark only works if user enters "http://"
