@@ -11,9 +11,9 @@ function Bookmark(title, link) {
 }
 
 
-function toggleBookmark() {
-  $bookmarkSection.addClass('new-bookmark');
-}
+// function toggleBookmark() {
+//   $bookmarkSection.addClass('new-bookmark');
+// }
 
 function clearFields() {
   $title.val("");
@@ -21,13 +21,13 @@ function clearFields() {
 }
 $enter.on('click', function() {
       newSection();
-      toggleBookmark();
+      // toggleBookmark();
       clearFields();
   });
 
   $('input').keypress(function(event) {
      if (event.which === 13) {
-       toggleBookmark();
+      //  toggleBookmark();
        newSection();
        clearFields();
      }
