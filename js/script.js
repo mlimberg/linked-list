@@ -16,7 +16,7 @@ function addBookmark() {
       alert('You must enter a title and a URL!');
   } else {
     $bookmarkTitle.append(currentBookmark['title']);
-    $bookmarkLink.append('<a href=' + currentBookmark['link'] + '" target="_blank">'+ currentBookmark['link'] + '</a>');
+    $bookmarkLink.append('<a href="' + currentBookmark['link'] + '" target="_blank">'+ currentBookmark['link'] + '</a>');
   }
 }
 
@@ -29,9 +29,18 @@ function clearFields() {
   $link.val("");
 }
 $enter.on('click', function() {
+      newSection();
       toggleBookmark();
-      addBookmark();
+      // addBookmark();
       clearFields();
   });
 
 // ! Bookmark only works if user enters "http://"
+
+function newSection() {
+var currentBookmark = new Bookmark();
+var listItem = currentBookmark['title'];
+var listLink = currentBookmark['link'];
+$bookmarkSection.prepend('<a href="' + currentBookmark['link'] + '" target="_blank">'+ currentBookmark['link'] + '</a>'+ '</div>');
+$bookmarkSection.prepend('<div class="new-bookmark">' + listItem);
+}

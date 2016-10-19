@@ -63,8 +63,13 @@ input {
   border: 1px solid #D3D3D3;
 }
 
+section {
+  display: block;
+}
+
 .bookmark-section {
   background-color: #CFD8DC;
+  display: block;
 }
 
 .new-bookmark {
