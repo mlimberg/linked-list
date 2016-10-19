@@ -14,6 +14,18 @@ h1 {
   margin: 10px auto;
 }
 
+a {
+  text-decoration: none;
+  border-bottom: 1px solid #CFD8DC;
+  color: #607D8B;
+}
+
+a:hover, #marked:hover, #remove:hover {
+  color: #455A64;
+  font-weight: 800;
+  cursor: pointer;
+}
+
 .h1-text-linked, .h1-text-list {
   display: inline-block;
   font-size: 30px;
@@ -109,9 +121,10 @@ section {
   background-color: white;
 }
 
+.read {
+    background-color: #F2F4F4;
 
-
-
+}
 
 @media (min-width: 770px) {
 
@@ -144,7 +157,6 @@ input, .enter, h1 {
   width: 60px;
   display: inline-block;
   vertical-align: bottom;
-
 }
 
 
