@@ -13,7 +13,6 @@ header {
 h1 {
   text-align: center;
   margin: 10px auto;
-
 }
 
 .h1-text-linked, .h1-text-list {
@@ -34,10 +33,10 @@ input {
     font-size: 1.4em;
     font-weight: 200;
     letter-spacing: 2px;
-
+    border: 1px solid #D3D3D3;
 }
 
-input, button {
+input, .enter {
   display: block;
   margin: 20px auto;
   width: 90%;
@@ -45,7 +44,7 @@ input, button {
   padding: 5px;
 }
 
-button, button:hover {
+.enter, .enter:hover {
   background-color: #FFC107;
   color: #FFFFFF;
   border: none;
@@ -54,16 +53,17 @@ button, button:hover {
   width: 93%;
   font-size: 18px;
   letter-spacing: 1px;
-
 }
 
-button:hover {
+.enter:hover {
   background-color: #FFD773;
 }
 
-input {
-  border: 1px solid #D3D3D3;
+input:focus, button:focus {
+  outline: 0;
+  box-shadow: none;
 }
+
 
 section {
   display: block;
@@ -79,11 +79,11 @@ section {
 }
 
 .new-bookmark {
-  display: block;
   background-color: white;
-  width: 90%;
-  border: 1px solid #607D8B;
+  width: 80%;
+  border: 2px solid #607D8B;
   margin: 20px auto;
+  padding: 10px;
 }
 
 .new-bookmark:hover {
@@ -95,12 +95,19 @@ section {
   border-bottom: 1px solid #CFD8DC;
   font-weight: 800;
   font-size: 1.5em;
+  padding: 15px 0px;
 }
 
 .new-link {
   color: #607D8B;
   border-bottom: 1px solid #CFD8DC;
   text-decoration: none;
+  padding: 15px 0px;
+}
+
+#marked, #remove {
+  border: none;
+  background-color: white;
 }
 
 
@@ -128,7 +135,7 @@ header {
   letter-spacing: 1px;
 }
 
-input, button, h1 {
+input, .enter, h1 {
   margin: 50px auto;
 }
 
