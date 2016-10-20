@@ -51,6 +51,7 @@ $('input').keypress(function(event) {
    }
  });
 
+
 $title.on('input', function() {
     if ($title.val() && $link.val()) {
       $enter.prop('disabled', false);
@@ -73,6 +74,12 @@ $(document).on('click', ".mark-as-read", function() {
     } else {
       $clearRead.prop('disabled', true);
     }
+})
+
+$(document).on( 'click', function() {
+  if (readCounter === 0) {
+    $clearRead.prop('disabled', true)
+  }
 })
 
 $(document).on('click', '.clear-read' , function() {
