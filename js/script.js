@@ -85,21 +85,38 @@ $(document).on('click', '.clear-read' , function() {
 
 // ! Bookmark only works if user enters "http://"
 
+
 function newSection(title) {
 var currentBookmark = new Bookmark();
 var listTitle = currentBookmark['title'];
 var listLink = currentBookmark['link'];
-var titles = ('<div class="new-bookmark">' + '<div class="new-title">' + listTitle + '</div>' + '<div class="new-link">');
-var links = ('<a href="' + listLink + '" target="_blank">'+ listLink + '</a>'+ '</div>');
-var buttons = ('<div class="button-block">' + '<button type="button" name="button" class="mark-as-read">Read</button><button type="button" name="button" class="remove">Delete</button>' + '</div>' + '</div>');
 if (listTitle === "" || listLink === "") {
-  alert('You must enter a title and a URL!');
-       }  else {
-$bookmarkSection.prepend(titles + links + buttons);
+ alert('You must enter a title and a URL!');
+      }  else {
+$bookmarkSection.prepend(
+`<div class="new-bookmark">
+ <div class="new-title">
+   ${listTitle}
+ </div>
+ <div class="new-link">
+   <a href="${listLink}" target="_blank">
+     ${listLink}
+   </a>
+ </div>
+ <div class="button-block">
+   <button type="button" name="button" class="mark-as-read">
+     <span class="underlines">Read</span>
+   </button>
+   <button type="button" name="button" class="remove">
+     <span class="underlines">Delete</span>
+   </button>
+ </div>
+</div>`
+);
 bookmarkCounter += 1;
 console.log(bookmarkCounter);
-       }
-   };
+      }
+  };
 
 $('.bookmark-section').off('click').on('click', '.mark-as-read', function() {
   if ($(this).hasClass('red')) {
