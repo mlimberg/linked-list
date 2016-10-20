@@ -5,8 +5,12 @@ var $bookmarkTitle = $('.bookmark-title');
 var $bookmarkLink = $('.bookmark-link');
 var $bookmarkSection = $('.bookmark-section');
 var bookmarkCounter = 0;
+var readCounter = 0;
 var $bookmarkCount = $('.bookmark-count');
+var $readCount = $('.read-count');
 
+updateCounter();
+updateReadCounter();
 
 function Bookmark(title, link) {
   this.title = $title.val();
@@ -26,6 +30,10 @@ function updateCounter() {
   $bookmarkCount.text(bookmarkCounter);
 }
 
+function updateReadCounter() {
+  $readCount.text(readCounter);
+}
+
 $enter.on('click', function() {
       newSection();
       clearFields();
@@ -37,6 +45,8 @@ $('input').keypress(function(event) {
    if (event.which === 13) {
      newSection();
      clearFields();
+     updateCounter();
+     disableButton();
    }
  });
 
@@ -75,12 +85,24 @@ console.log(bookmarkCounter);
    };
 
 $('.bookmark-section').off('click').on('click', '.mark-as-read', function() {
+  if ($(this).hasClass('red')) {
+    readCounter -=1;
+  } else {
+    readCounter +=1;
+  }
   $(this).parent().parent().toggleClass('read');
   $(this).toggleClass('red');
+  updateReadCounter();
 })
 
 $('.bookmark-section').on('click', '.remove', function() {
   $(this).parent().parent().remove();
-  bookmarkCounter -= 1;
-  console.log(bookmarkCounter);
+  if ($(this).siblings().hasClass('red')) {
+    readCounter -=1;
+    bookmarkCounter -=1;
+  } else {
+    bookmarkCounter -=1;
+  }
+  updateCounter();
+  updateReadCounter();
 })
