@@ -1,5 +1,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
+  background-color: #CFD8DC;
+
 }
 
 header {
@@ -10,26 +12,30 @@ header {
 }
 
 h1 {
-  text-align: center;
   margin: 10px auto;
+  text-align: center;
+}
+
+section {
+  display: block;
 }
 
 a {
-  text-decoration: none;
   border-bottom: 1px solid #F2F4F4;
   color: #607D8B;
+  text-decoration: none;
 }
 
 a:hover, .mark-as-read:hover, .remove:hover {
   color: #455A64;
-  font-weight: 800;
   cursor: pointer;
+  font-weight: 800;
 }
 
 .counter-container {
-  margin: 10px auto;
   display: flex;
   justify-content: center;
+  margin: 10px auto;
 }
 
 .h1-text-linked, .h1-text-list {
@@ -40,59 +46,59 @@ a:hover, .mark-as-read:hover, .remove:hover {
 }
 
 .logo {
+  display: inline-block;
   height: 2em;
   width: 3em;
-  display: inline-block;
   vertical-align: baseline;
 }
 
 input {
-    font-size: 1.4em;
-    font-weight: 200;
-    letter-spacing: 2px;
-    border: 1px solid #D3D3D3;
+  border: 1px solid #D3D3D3;
+  font-size: 1.4em;
+  font-weight: 200;
+  letter-spacing: 2px;
 }
 
 input, .enter {
+  border: none;
   display: block;
   margin: 20px auto;
-  width: 90%;
-  border: none;
   padding: 5px;
+  width: 90%;
 }
 
 .enter, .enter:hover {
   background-color: #FFC107;
-  color: #FFFFFF;
   border: none;
+  color: #FFFFFF;
+  font-size: 18px;
   font-weight: 800;
   height: 2.3em;
-  width: 93%;
-  font-size: 18px;
   letter-spacing: 1px;
+  width: 93%;
 }
 
 .clear-read {
-  color: #FFFFFF;
   background-color: #FFC107;
-  font-weight: 800;
-  letter-spacing: .2px;
-  font-size: 16px;
-  height: 35px;
-  width: 120px;
   border: none;
-  padding: 5px;
+  color: #FFFFFF;
   display: block;
+  font-size: 16px;
+  font-weight: 800;
+  height: 35px;
+  letter-spacing: .2px;
   margin: 10px auto;
+  padding: 5px;
+  width: 120px;
 }
 
 .clear-read:hover {
   background-color: #FFD773;
-  color: #FFFFFF;
   border: none;
+  color: #FFFFFF;
 }
 
-.clear-read[disabled]:hover {
+.clear-read[disabled]:hover, .enter[disabled]:hover {
   background-color: #FFC107;
 }
 
@@ -100,65 +106,51 @@ input, .enter {
   background-color: #FFD773;
 }
 
-.enter[disabled]:hover {
-  background-color: #FFC107;
-
-}
-
 input:focus, button:focus {
-  outline: 0;
   box-shadow: none;
+  outline: 0;
 }
 
-
-section {
-  display: block;
-}
 
 .bookmark-section {
   background-color: #CFD8DC;
   display: block;
+  padding-top: 10px;
   position: absolute;
   width: 100%;
-  height: 500%;
-  padding-top: 10px;
 }
 
 .new-bookmark {
   background-color: white;
-  width: 80%;
   border: 2px solid #607D8B;
   margin: 20px auto;
   padding: 10px;
+  width: 80%;
 }
 
-/*.new-bookmark:hover {
-  background-color: white;
-}*/
-
 .new-title {
-  color: #455A64;
   border-bottom: 1px solid #CFD8DC;
-  font-weight: 800;
+  color: #455A64;
   font-size: 1.7em;
-  padding: 5px 0px 10px 0px;
+  font-weight: 800;
   letter-spacing: .5px;
+  padding: 5px 0px 10px 0px;
 }
 
 .new-link {
-  color: #607D8B;
   border-bottom: 1px solid #CFD8DC;
-  text-decoration: none;
-  padding: 15px 0px;
+  color: #607D8B;
   font-size: 18px;
+  padding: 15px 0px;
+  text-decoration: none;
 }
 
 .mark-as-read, .remove {
-  border: none;
   background-color: inherit;
+  border: none;
+  color: #607D8B;
   font-size: 16px;
   padding-top: 10px;
-  color: #607D8B;
 
 
 }
@@ -168,7 +160,7 @@ section {
 }
 
 .read {
-    background-color: #F2F4F4;
+  background-color: #F2F4F4;
 }
 
 .read a {
@@ -176,24 +168,22 @@ section {
 }
 
 .red {
+  background-color: inherit;
   color: red;
   font-weight: 800;
-  background-color: inherit;
 }
 
 .underlines:hover, a:hover {
   border-bottom: 1px solid #FFC107;
 }
 
-
-
 @media (min-width: 770px) {
 
 header {
-  position: fixed;
-  width: 50%;
   height: 100%;
   padding: 0;
+  position: fixed;
+  width: 50%;
 }
 
 .header-full {
@@ -212,19 +202,17 @@ input, .enter, h1 {
 }
 
 .logo {
+  display: inline-block;
   height: 3em;
   width: 4em;
-  display: inline-block;
   vertical-align: top;
 }
 
-
 .bookmark-section {
-  height: 3000px;
+  background-color: #CFD8DC;;
   position: absolute;
   right: 0;
   width: 50%;
-  background-color: #CFD8DC;
 }
 
 .enter {
