@@ -67,6 +67,14 @@ $link.on('input', function() {
     }
 })
 
+$(document).on('click', ".mark-as-read", function() {
+    if (readCounter > 0) {
+      $clearRead.prop('disabled', false);
+    } else {
+      $clearRead.prop('disabled', true);
+    }
+})
+
 $(document).on('click', '.clear-read' , function() {
   $('.bookmark-section').children('.read').remove();
   bookmarkCounter = bookmarkCounter - readCounter;
