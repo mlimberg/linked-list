@@ -70,6 +70,11 @@ input, .enter {
   background-color: #FFD773;
 }
 
+.enter[disabled]:hover {
+  background-color: #FFC107;
+
+}
+
 input:focus, button:focus {
   outline: 0;
   box-shadow: none;

@@ -18,17 +18,38 @@ function clearFields() {
   $link.val("");
 }
 
+function disableButton() {
+  $enter.prop('disabled', true);
+}
+
 $enter.on('click', function() {
       newSection();
       clearFields();
+      disableButton();
   });
 
-  $('input').keypress(function(event) {
-     if (event.which === 13) {
-       newSection();
-       clearFields();
-     }
-   });
+$('input').keypress(function(event) {
+   if (event.which === 13) {
+     newSection();
+     clearFields();
+   }
+ });
+
+$title.on('input', function() {
+    if ($title.val() && $link.val()) {
+      $enter.prop('disabled', false);
+    } else {
+      $enter.prop('disabled', true);
+    }
+})
+
+$link.on('input', function() {
+    if ($title.val() && $link.val()) {
+      $enter.prop('disabled', false);
+    } else {
+      $enter.prop('disabled', true);
+    }
+})
 
 // ! Bookmark only works if user enters "http://"
 
