@@ -36,7 +36,7 @@ a:hover, .mark-as-read:hover, .remove:hover {
   display: flex;
   justify-content: center;
   margin: 10px auto;
-  font-size: 1.5em
+  font-size: 1em
 }
 
 .h1-text-linked, .h1-text-list {
@@ -160,6 +160,10 @@ input:focus, button:focus {
 
 .read {
   background-color: #F2F4F4;
+}
+
+.unread-text {
+  padding-left: 10px;
 }
 
 .read a {

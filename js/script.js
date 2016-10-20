@@ -6,12 +6,15 @@ var $bookmarkLink = $('.bookmark-link');
 var $bookmarkSection = $('.bookmark-section');
 var bookmarkCounter = 0;
 var readCounter = 0;
+var unreadCounter = 0;
 var $bookmarkCount = $('.bookmark-count');
 var $readCount = $('.read-count');
 var $clearRead = $('.clear-read');
+var $unreadCount = $('.unread-count');
 
-updateCounter();
-updateReadCounter();
+
+
+updateAllCounters()
 
 function Bookmark(title, link) {
   this.title = $title.val();
@@ -35,10 +38,21 @@ function updateReadCounter() {
   $readCount.text(readCounter);
 }
 
+function updateUnreadCounter() {
+  unreadCounter = bookmarkCounter - readCounter;
+  $unreadCount.text(unreadCounter);
+}
+
+function updateAllCounters() {
+  updateCounter();
+  updateReadCounter();
+  updateUnreadCounter();
+}
+
 $enter.on('click', function() {
       newSection();
       clearFields();
-      updateCounter();
+      updateAllCounters()
       disableButton();
   });
 
@@ -46,7 +60,7 @@ $('input').keypress(function(event) {
    if (event.which === 13) {
      newSection();
      clearFields();
-     updateCounter();
+     updateAllCounters();
      disableButton();
    }
  });
@@ -86,11 +100,9 @@ $(document).on('click', '.clear-read' , function() {
   $('.bookmark-section').children('.read').remove();
   bookmarkCounter = bookmarkCounter - readCounter;
   readCounter = 0;
-  updateCounter();
-  updateReadCounter();
+  updateAllCounters();
 })
 
-// ! Bookmark only works if user enters "http://"
 
 
 function newSection(title) {
@@ -120,20 +132,27 @@ $bookmarkSection.prepend(
  </div>
 </div>`
 );
-bookmarkCounter += 1;
-console.log(bookmarkCounter);
-      }
+bookmarkCounter += 1;      }
   };
 
-$('.bookmark-section').off('click').on('click', '.mark-as-read', function() {
-  if ($(this).hasClass('red')) {
-    readCounter -=1;
+function updateReadOnClick(input) {
+  if (input.hasClass('red')) {
+    readCounter--;
   } else {
-    readCounter +=1;
+    readCounter++;
   }
-  $(this).parent().parent().toggleClass('read');
-  $(this).toggleClass('red');
-  updateReadCounter();
+}
+
+function toggleClasses(input) {
+  input.closest('.new-bookmark').toggleClass('read');
+  input.toggleClass('red');
+}
+
+$('.bookmark-section').off('click').on('click', '.mark-as-read', function() {
+  var $readButton = $(this);
+  updateReadOnClick($readButton);
+  toggleClasses($readButton);
+  updateAllCounters();
 })
 
 $('.bookmark-section').on('click', '.remove', function() {
@@ -144,6 +163,5 @@ $('.bookmark-section').on('click', '.remove', function() {
   } else {
     bookmarkCounter -=1;
   }
-  updateCounter();
-  updateReadCounter();
+  updateAllCounters();
 })
