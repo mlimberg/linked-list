@@ -26,6 +26,12 @@ a:hover, .mark-as-read:hover, .remove:hover {
   cursor: pointer;
 }
 
+.counter-container {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+
 .h1-text-linked, .h1-text-list {
   display: inline-block;
   font-size: 30px;

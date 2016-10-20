@@ -5,7 +5,7 @@ var $bookmarkTitle = $('.bookmark-title');
 var $bookmarkLink = $('.bookmark-link');
 var $bookmarkSection = $('.bookmark-section');
 var bookmarkCounter = 0;
-
+var $bookmarkCount = $('.bookmark-count');
 
 
 function Bookmark(title, link) {
@@ -22,9 +22,14 @@ function disableButton() {
   $enter.prop('disabled', true);
 }
 
+function updateCounter() {
+  $bookmarkCount.text(bookmarkCounter);
+}
+
 $enter.on('click', function() {
       newSection();
       clearFields();
+      updateCounter();
       disableButton();
   });
 
