@@ -72,6 +72,28 @@ input, .enter {
   letter-spacing: 1px;
 }
 
+.clear-read {
+  color: #FFFFFF;
+  background-color: #FFC107;
+  font-weight: bold;
+  letter-spacing: .2px;
+  width: 100px;
+  border: none;
+  padding: 5px;
+  display: block;
+  margin: 2px auto;
+}
+
+.clear-read:hover {
+  background-color: #FFD773;
+  color: #FFFFFF;
+  border: none;
+}
+
+.clear-read[disabled]:hover {
+  background-color: #FFC107;
+}
+
 .enter:hover {
   background-color: #FFD773;
 }
@@ -146,6 +168,8 @@ section {
   font-weight: 800;
   background-color: inherit;
 }
+
+
 
 @media (min-width: 770px) {
 

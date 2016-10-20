@@ -8,6 +8,7 @@ var bookmarkCounter = 0;
 var readCounter = 0;
 var $bookmarkCount = $('.bookmark-count');
 var $readCount = $('.read-count');
+var $clearRead = $('.clear-read');
 
 updateCounter();
 updateReadCounter();
@@ -64,6 +65,22 @@ $link.on('input', function() {
     } else {
       $enter.prop('disabled', true);
     }
+})
+
+$(document).on('click', ".mark-as-read", function() {
+    if (readCounter > 0) {
+      $clearRead.prop('disabled', false);
+    } else {
+      $clearRead.prop('disabled', true);
+    }
+})
+
+$(document).on('click', '.clear-read' , function() {
+  $('.bookmark-section').children('.read').remove();
+  bookmarkCounter = bookmarkCounter - readCounter;
+  readCounter = 0;
+  updateCounter();
+  updateReadCounter();
 })
 
 // ! Bookmark only works if user enters "http://"
