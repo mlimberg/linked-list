@@ -147,6 +147,11 @@ section {
   background-color: inherit;
 }
 
+.clear-read {
+    display: block;
+    margin: 2px auto;
+}
+
 @media (min-width: 770px) {
 
 header {
