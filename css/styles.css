@@ -36,6 +36,7 @@ a:hover, .mark-as-read:hover, .remove:hover {
   display: flex;
   justify-content: center;
   margin: 10px auto;
+  font-size: 1.5em
 }
 
 .h1-text-linked, .h1-text-list {
@@ -151,8 +152,6 @@ input:focus, button:focus {
   color: #607D8B;
   font-size: 16px;
   padding-top: 10px;
-
-
 }
 
 .remove {
