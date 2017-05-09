@@ -10,7 +10,9 @@ var $clearRead = $('.clear-read');
 var $unreadCount = $('.unread-count');
 var bookmarkCounter = 0;
 var readCounter = 0;
-var unreadCounter = 0;
+  
+//closure
+var unreadCounter = updateUnreadCounter();
 
 
 updateAllCounters()
@@ -38,14 +40,18 @@ function updateReadCounter() {
 }
 
 function updateUnreadCounter() {
-  unreadCounter = bookmarkCounter - readCounter;
-  $unreadCount.text(unreadCounter);
+  var unreadCounter = 0;
+    function update() {
+      unreadCounter = bookmarkCounter - readCounter;
+      $unreadCount.text(unreadCounter);
+    }
+    return update;
 }
 
 function updateAllCounters() {
   updateCounter();
   updateReadCounter();
-  updateUnreadCounter();
+  unreadCounter();
 }
 
 $enter.on('click', function() {
